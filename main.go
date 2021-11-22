@@ -72,7 +72,7 @@ func readText(scanner *bufio.Scanner, ctx context.Context) (string, error) {
 			errChan <- scanner.Err()
 			return
 		}
-		textChan <- scanner.Text()
+		textChan <- scanner.Text() + "\r\n"
 	}()
 
 	select {
